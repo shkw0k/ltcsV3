@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<title>LTCS2</title>
+<link rel='stylesheet' type='text/css' href='ltcs.css' title='ltcs'>
+
+<script type='text/javascript' src='libs/utils.js'></script>
+<script type='text/javascript' src='libs/ajax.js'></script>
+<script type='text/javascript' src='ltcs2.js'></script>
+<script type='text/javascript' src='status.js'></script>
+
+</head>
+<body>
+<a id='logo' href='http://www.keck.hawaii.edu'></a>
+
+<div id='headline'>
+<h2>Laser Traffic Control System V2 - Status</h2>
+<ul id='ltcsmenu'>
+<li id='Schedule'><span>Schedule</span>
+<li id='Status'><span>Status</span>
+<li id='View3D'><span>3D View</span>
+</ul>
+</div>
+
+<div id='mainView'>
+<input type='button' value='Refresh' id='refresh'>
+<div id='statusTableDiv'></div>
+<table id='resultTable'>
+<tr><td>Status Updated: <span id='statusTime'></span>
+</table>
+
+</div>
+<br>
+<div id='debugMsg'></div>
+<hr>
+
+<footer id='footerDiv'>
+</footer>
+<script type='text/javascript'>
+LTCSStatus();
+</script>
+</body>
+</html>

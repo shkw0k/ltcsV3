@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta cache-control="no-cache">
+<title>LTCS2</title>
+<link rel='stylesheet' type='text/css' href='ltcs.css' title='aimLTCS'>
+
+<script type='text/javascript' src='libs/utils.js'></script>
+<script type='text/javascript' src='libs/ajax.js'></script>
+<script type='text/javascript' src='aim.js'></script>
+
+</head>
+<body>
+<a id='logo' href='http://www.keck.hawaii.edu'></a>
+
+<div id='headline'>
+<h2>Laser Traffic Control System V2</h2>
+<ul id='ltcsmenu'>
+<li id='Schedule'><span>Schedule</span>
+<li id='Status'><span>Status</span>
+<li id='View3D'><span>3D View</span>
+</ul>
+</div>
+
+<div id='mainView'>
+<h2>
+Force collision
+</h2>
+<table>
+<tr><td>Pointing Telescope:
+<td><select id='pointingTel'>
+<option value="KECK1">KECK1</option>
+<option value="KECK2">KECK2</option>
+<option value="SUBARU">SUBARU</option>
+<option value="GEMINI">GEMINI</option>
+<option value="CFHT">CFHT</option>
+</select>
+<tr><td>Target Telescope:
+<td><select id='targetTel'>
+<option value="KECK1">KECK1</option>
+<option value="KECK2" selected>KECK2</option>
+<option value="SUBARU">SUBARU</option>
+<option value="GEMINI">GEMINI</option>
+<option value="CFHT">CFHT</option>
+</select>
+<tr><td>Distance along line of sight [m]:
+<td><input type='ext' id='distance' value="10000">
+<tr><td>&nbsp;<td><input type='button' id='calcCollision' value='Calculate'>
+</table>
+<br>
+<h3>Result</h3>
+<table>
+<tr><td>Azimuth [deg]:<td><span id='aimToAz'>0</span>
+<tr><td>Elevation [deg]:<td><span id='aimToEl'>0</span>
+<tr><td>&nbsp;<td><input type='button' id='Set' value='Apply Now'>
+</table>
+</div>
+<br>
+<div id='debugMsg'></div>
+<hr>
+
+<p style='text-align:center'>
+
+<font size=2>
+Last modified 2016-12-03, 
+LTCS v2.0, W. M. Keck Observatory (C) 2016
+<br>
+</font>
+</p>
+<script type='text/javascript'>
+InitAim();
+</script>
+</body>
+</html>

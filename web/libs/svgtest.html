@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Test</title>
+<style>
+.bar {
+	background-color: #eee;
+	fill: #888;
+}
+
+.x12 {
+	fill: #5ff;
+	stroke: #000;
+	stroke-width: 3;
+}
+
+.svgx12 {
+	width: 700px;
+	height: 400px;
+	fill: #000;
+	background-color: #ffa;
+}
+</style>
+
+<script type="text/javascript" src="glib.js"></script>
+
+<script type="text/javascript">
+	function E(n) {
+		return document.getElementById(n);
+	}
+
+	function MyTest() {
+		var self = this;
+		var width = 500;
+		var height = 0.8 * width;
+
+		var msg = E('msg');
+
+		msg.innerHTML = 'Start ';
+
+		function genNumbers(nlen) {
+			var res = Array();
+			var i;
+			for (i = 0; i < nlen; ++i) {
+				res.push([ i, Math.random() * 200.0 ]);
+			}
+			return res;
+		}
+
+		self.dragging = 0;
+		self.anchorx = 0;
+		self.anchory = 0;
+
+		self.mouseDown = function(evt) {
+			evt = evt || window.event;
+			self.anchorx = evt.clientX;
+			self.anchory = evt.clientY;
+			self.dragging = 1;
+			return false;
+		};
+
+		self.mouseUp = function(evt) {
+			evt = evt || window.event;
+			self.dragging = 0;
+			self.anchorx = evt.clientX;
+			self.anchory = evt.clientY;
+			return false;
+		};
+
+		self.mouseMoved = function(evt) {
+			evt = evt || window.event;
+			var mx = evt.clientX;
+			var my = evt.clientY;
+			var bt = evt.button;
+			if (self.dragging == 0) {
+				return;
+			}
+
+			var dx = mx - self.anchorx;
+			var dy = my - self.anchory;
+
+			var bt; // 0 left, 1 mid, 2 right
+			if (evt.buttons) {
+				bt = evt.buttons < 2 ? 0 : (evt.buttons == 4 ? 1 : 2);
+			} else if (evt.which) {
+				bt = evt.which < 2 ? 0 : (evt.which == 2 ? 1 : 2);
+			} else {
+				bt = evt.button < 2 ? 0 : (evt.button == 4 ? 1 : 2);
+			}
+			self.moveChart(dx, dy);
+		};
+		
+		self.moveChart = function (dx, dy) {
+			var chart = self.chart;
+			chart.move(dx, dy);
+		};
+
+		var nums = 33;
+		var data = genNumbers(nums);
+		var chart = new SVG('container', 'x12');
+
+		chart.setData(data);
+		chart.setXLimits(0, width).setYLimits(0, height);
+		chart.setXRange(-100, 2 * nums).setYRange(0, 200);
+		chart.genChart('circle', 9);
+
+		self.chart = chart;
+
+		var ctner = chart.container;
+		ctner.onmouseover = self.mouseUp;
+		ctner.onmouseup = self.mouseUp;
+		ctner.onmouseout = self.mouseUp;
+		ctner.onmousedown = self.mouseDown;
+		ctner.onmousemove = self.mouseMoved;
+		msg.innerHTML += " Done";
+	}
+</script>
+</head>
+<body>
+	<h1>My test</h1>
+	<p>more</p>
+	<div id='hhh' class='bar'>This is test.</div>
+	<div id='container' class="chart"></div>
+	<hr>
+	<div id='msg'></div>
+	<script type="text/javascript">
+		MyTest();
+	</script>
+</body>
+</html>

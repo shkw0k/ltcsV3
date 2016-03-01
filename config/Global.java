@@ -1,5 +1,11 @@
 package config;
 
+/*
+ * Many of these fields are inherited from the LTCS2 and are deprecated.
+ * These fields need to be cleaned up.
+ * 
+ */
+
 public class Global {
 	// The variable names are in lower case. They correspond to the variables (in upper case) in the configuration file. 
 	public int alarm_port = 43868;

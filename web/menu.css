@@ -1,0 +1,48 @@
+#logo {
+	float: left;
+	margin: 0;
+	width: 82px;
+	height: 72px;
+	background: transparent url(./logo.gif) no-repeat top left;
+}
+
+#headline h2 {
+	float: left;
+	margin: 0;
+	padding: 10px 0 0 20px;
+	font-size: 180%;
+}
+
+#ltcsmenu {
+	float: left;
+	width: 100%;
+	padding: 10px 10px 10px 10px;
+	list-style: none;
+}
+
+#ltcsmenu li {
+	float: inherit;
+	margin: 0;
+	padding: 0;
+	font-size: 90%;
+}
+
+#ltcsmenu li span {
+	float: none;
+	display: block;
+	margin: 0 3px 0 0;
+	padding: 4px 4px;
+	color: #000;
+	text-decoration: none;
+	background: #f0f0ff;
+	border: 1px solid #eef;
+}
+
+#ltcsmenu span:hover,#ltcsmenu span:active {
+	color: #000;
+	padding: 2px 1px;
+	border-color: #500;
+	background: #fff;
+	border: 1px solid #000;
+	font-size: 120%;
+}
