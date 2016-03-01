@@ -1,0 +1,26 @@
+# Keck 1
+# http://kapoli.keck.hawaii.edu/ltcs/data/KECK1_ltcs.dat
+#file:/home/skwok/ltcs2/ltcs/PntInfoServer/KECK1_ltcs.dat
+#
+# Keck 2
+# http://kapoli.keck.hawaii.edu/ltcs/data/KECK2_ltcs.dat
+file:/home/skwok/ltcs2/ltcs/PntInfoServer/KECK2_ltcs.dat
+#
+# CFHT
+#http://ltcs.cfht.hawaii.edu:8911
+# http://localhost:8911
+#
+# Subaru
+
+http://ltcs.naoj.hawaii.edu:8011/ltcs.html 
+# http://localhost:8011/ltcs.html
+
+# US2.2M
+#http://guide0.ifa.hawaii.edu/laserinfo 
+
+# Gemini
+#http://128.171.88.202/gemini.info
+
+# IRTF
+#http://irtfweb.ifa.hawaii.edu/Facility/LaserTraffic/tcs_data.txt 
+
